@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bowlingscoreboard.GameController">
+    <center>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <HBox fx:id="frameContainer" alignment="CENTER_LEFT" />
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <Label fx:id="gameOver" text="Game over!" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                <RadioButton fx:id="rollTypeRandom" mnemonicParsing="false" text="Random" />
+                <RadioButton fx:id="rollTypeValue" mnemonicParsing="false" text="Value" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                <Spinner fx:id="value" prefHeight="25.0" prefWidth="60.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+                    </valueFactory>
+                </Spinner>
+                <Button fx:id="roll" mnemonicParsing="false" text="Roll!" />
+            </HBox>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+        </VBox>
+    </center>
+   <top>
+       <MenuBar BorderPane.alignment="CENTER">
+           <Menu mnemonicParsing="false" text="File">
+               <MenuItem fx:id="newGame" mnemonicParsing="false" text="New game" />
+               <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+           </Menu>
+       </MenuBar>
+   </top>
+</BorderPane>
