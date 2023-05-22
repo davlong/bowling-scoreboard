@@ -33,19 +33,19 @@ public class Game {
                 if (pins == 10 && currentFrame < 9) {
                     currentFrame++;
                 }
+            } else if (currentFrame == 9 && frames[9] != null && (frames[9].isStrike() || frames[9].isSpare())) {
+                frames[9].setRoll3(pins);
+                calculateScoreAtFrame(currentFrame);
+                setOver(true);
             } else {
                 frames[currentFrame].setRoll2(pins);
                 if (currentFrame == 9 && !(frames[9].isStrike() || frames[9].isSpare())) {
                     setOver(true);
                 }
                 calculateScoreAtFrame(currentFrame);
-                currentFrame++;
-            }
-        } else {
-            if (currentFrame == 10 && frames[9] != null && (frames[9].isStrike() || frames[9].isSpare())) {
-                frames[9].setRoll3(pins);
-                calculateScoreAtFrame(currentFrame);
-                setOver(true);
+                if (currentFrame != 9) {
+                    currentFrame++;
+                }
             }
         }
         return frame;
